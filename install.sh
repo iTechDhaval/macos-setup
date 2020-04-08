@@ -13,15 +13,13 @@ fi
 homedir=$1
 
 # dotfiles directory
-dotfiledir=${homedir}/dotfiles
+dotfiledir="$( cd "$( dirname "$0" )" && pwd )"
+
+# change to the dotfiles directory
+echo "Processing from the ${dotfiledir} directory"
 
 # list of files/folders to symlink in ${homedir}
 files="bash_profile bashrc bash_prompt aliases private gitconfig gitignore p10k zshrc"
-
-# change to the dotfiles directory
-echo "Changing to the ${dotfiledir} directory"
-cd ${dotfiledir}
-echo "...done"
 
 # create symlinks (will overwrite old dotfiles)
 for file in ${files}; do
