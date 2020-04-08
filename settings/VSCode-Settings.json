@@ -1,37 +1,37 @@
 {
-    "workbench.colorTheme": "Predawn",
-    "workbench.iconTheme": "ayu",
-    "editor.fontSize": 22,
+    "terminal.integrated.fontFamily": "Source Code Pro for Powerline",
+    "terminal.integrated.fontSize": 14,
+    "terminal.external.osxExec": "iTerm.app",
+    "git.autofetch": true,
+    "git.confirmSync": false,
+    "editor.wordWrap": "on",
+    "dart.flutterSdkPath": "/Users/dhaval/tools/flutter",
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.colorTheme": "Atom One Dark",
+    "editor.fontSize": 14,
+    "editor.fontLigatures": true,
+    "editor.fontFamily": "Fira Code, 'Segoe UI Emoji', 'Segoe UI Symbol'",
+    "sync.gist": "9a668d6038de78caf91c93037be6cbc4",
+    "sync.autoUpload": true,
+    "vsicons.projectDetection.disableDetect": true,
+    "window.zoomLevel": 1,
+    "files.trimTrailingWhitespace": true,
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "editor.fontWeight": "500",
-    "editor.fontFamily": "Source Code Pro",
-    "debug.console.fontFamily": "Source Code Pro",
-    "debug.console.fontSize": 22,
-    "terminal.integrated.fontSize": 22,
-    "terminal.integrated.fontWeight": "600",
-    "window.zoomLevel": 2,
-    "python.pythonPath": "/usr/local/bin/python3",
-    "python.formatting.provider": "black",
-    "editor.formatOnSave": true,
-    "python.linting.enabled": true,
-    "python.linting.pylintEnabled": true,
-    "code-runner.executorMap": {
-        "python": "$pythonPath -u $fullFileName"
+    "python.jediEnabled": false,
+    "cloudcode.gke": {
+        "projectIds": [
+            "chefsrasoi-239605"
+        ]
     },
-    "code-runner.clearPreviousOutput": true,
-    "code-runner.showExecutionMessage": false,
-    "code-runner.ignoreSelection": true,
-    "code-runner.saveFileBeforeRun": true,
-    "[plaintext]": {
-        "editor.quickSuggestions": false
+    "dart.previewFlutterUiGuides": true,
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
     },
-    "editor.quickSuggestionsDelay": 100,
-    "zenMode.centerLayout": false,
-    "zenMode.fullScreen": false,
-    "zenMode.hideLineNumbers": false,
-    "zenMode.hideTabs": false,
-    "editor.minimap.enabled": false,
-    "workbench.settings.openDefaultSettings": true,
-    "workbench.settings.editor": "json",
-    "workbench.statusBar.feedback.visible": false,
-    "workbench.startupEditor": "newUntitledFile",
+    "todo-tree.highlights.enabled": true,
+    "todo-tree.tree.showScanModeButton": false
 }

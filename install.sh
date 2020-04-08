@@ -2,7 +2,7 @@
 ############################
 # This script creates symlinks from the home directory to any desired dotfiles in ${homedir}/dotfiles
 # And also installs Homebrew Packages
-# And sets Sublime preferences
+# And sets VSCode preferences
 ############################
 
 if [ "$#" -ne 1 ]; then
@@ -30,10 +30,10 @@ for file in ${files}; do
 done
 
 # Download Git Auto-Completion
-curl "https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash" > ${homedir}/.git-completion.bash
+curl -fsSL "https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash" -o ${homedir}/.git-completion.bash
 
 # Run the Homebrew Script
-./brew.sh
+${dotfiledir}/brew.sh
 
-# Run the Sublime Script
-./sublime.sh
+# Run the VSCode Script
+${dotfiledir}/vscode.sh
