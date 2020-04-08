@@ -7,40 +7,66 @@ brew install homebrew/cask-cask
 brew update && brew cleanup
 
 # Install Brew Packages
-brew install python
-brew install tree
-brew install zsh
-brew install zsh-syntax-highlighting
-brew install youtube-dl
-brew install bash-completion
-brew install cowsay
-brew install htop-osx
+PACKAGE_LIST=(
+    python
+    tree
+    zsh
+    zsh-syntax-highlighting
+    youtube-dl
+    bash-completion
+    cowsay
+    htop-osx
+)
+for pkg in "${PACKAGE_LIST[@]}"
+do
+    [ -z $(brew list | grep $pkg) ] \
+        && brew install $pkg \
+        || echo "${pkg} already installed"
+done
 
 # Install MacOS Applications
 echo "Installing Applications..."
-brew cask install iterm2
-brew cask install google-chrome
-brew cask install firefox
-brew cask install visual-studio-code
-brew cask install virtualbox
-brew cask install sourcetree
-brew cask install discord
-brew cask install google-backup-and-sync
-brew cask install skype
-brew cask install gimp
-brew cask install vlc
-brew cask install divvy
-brew cask install dropbox
-brew cask install box-sync
-brew cask install citrix-receiver
-brew cask install skitch
-brew cask install the-unarchiver
+APP_LIST=(
+    iterm2
+    google-chrome
+    firefox
+    visual-studio-code
+    virtualbox
+    virtualbox-extension-pack
+    sourcetree
+    discord
+    google-backup-and-sync
+    skype
+    gimp
+    vlc
+    divvy
+    dropbox
+    box-sync
+    citrix-workspace
+    skitch
+    the-unarchiver
+)
+for app in "${APP_LIST[@]}"
+do
+    [ -z $(brew cask list | grep $app) ] \
+        && brew cask install $app \
+        || echo "Application '${app}' already installed."
+done
+
 
 # Install Source Code Pro Font
 echo "Installing fonts..."
 brew tap homebrew/cask-fonts
-brew cask install \
-    font-fira-code \
-    font-firamono-nerd-font \
-    font-meslo-lg \
+
+FONT_LIST=(
+    font-fira-code
+    font-firamono-nerd-font
+    font-meslo-lg
     font-fontawesome
+)
+for font in "${FONT_LIST[@]}"
+do
+    [ -z $(brew cask list | grep $font) ] \
+        && brew cask install $font \
+        || echo "Font '${font}' already installed."
+done
