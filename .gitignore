@@ -2,8 +2,12 @@
 *.pyc
 
 # Folder view configuration files
-.DS_Store
+*.DS_Store
+*.LSOverride
 Desktop.ini
+
+# Ruby
+.bundle
 
 # Thumbnail cache files
 ._*
