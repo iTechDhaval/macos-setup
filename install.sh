@@ -35,3 +35,6 @@ ${dotfiledir}/brew.sh
 
 # Run the VSCode Script
 ${dotfiledir}/vscode.sh
+
+# Run the VSCode Script
+${dotfiledir}/ozsh.sh
