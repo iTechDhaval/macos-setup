@@ -19,7 +19,7 @@ dotfiledir="$( cd "$( dirname "$0" )" && pwd )"
 echo "Processing from the ${dotfiledir} directory"
 
 # list of files/folders to symlink in ${homedir}
-files="bash_profile bashrc bash_prompt aliases private gitconfig gitignore p10k zshrc"
+files="bash_profile bashrc bash_prompt aliases private gitconfig gitignore p10k.zsh zshrc"
 
 # create symlinks (will overwrite old dotfiles)
 for file in ${files}; do
@@ -36,5 +36,5 @@ ${dotfiledir}/brew.sh
 # Run the VSCode Script
 ${dotfiledir}/vscode.sh
 
-# Run the VSCode Script
+# Run the oh my zsh setup Script
 ${dotfiledir}/ozsh.sh
