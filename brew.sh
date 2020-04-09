@@ -16,6 +16,7 @@ PACKAGE_LIST=(
     bash-completion
     cowsay
     htop-osx
+    nvm
 )
 for pkg in "${PACKAGE_LIST[@]}"
 do
@@ -45,6 +46,15 @@ APP_LIST=(
     citrix-workspace
     skitch
     the-unarchiver
+    docker
+    intel-power-gadget
+    webtorrent
+    pycharm-ce
+    microsoft-office
+    sketchpacks
+    skyfonts
+    paw
+    zoomus
 )
 for app in "${APP_LIST[@]}"
 do
