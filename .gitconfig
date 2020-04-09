@@ -30,8 +30,6 @@
   helper = osxkeychain
 [push]
   default = simple
-[merge]
-  tool = bcomp
 [difftool]
   prompt = false
 [alias]
