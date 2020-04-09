@@ -1,9 +1,8 @@
 #!/usr/bin/env bash
 
-command -v brew >/dev/null || (echo "Installing Brew..." && echo | ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)")
+command -v brew >/dev/null || ( echo "Installing Brew..." && export CI=1 && /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)" )
 
 # Homebrew cleanup
-brew install homebrew/cask-cask
 brew update && brew cleanup
 
 # Install Brew Packages
@@ -32,8 +31,6 @@ APP_LIST=(
     google-chrome
     firefox
     visual-studio-code
-    virtualbox
-    virtualbox-extension-pack
     sourcetree
     discord
     google-backup-and-sync
@@ -56,6 +53,12 @@ APP_LIST=(
     paw
     zoomus
 )
+
+if [ ! -z $(echo $HOME | grep 'vagrant') ]; then
+    APP_LIST+=( virtualbox )
+    APP_LIST+=( virtualbox-extension-pack )
+fi
+
 for app in "${APP_LIST[@]}"
 do
     [ -z $(brew cask list | grep $app) ] \
