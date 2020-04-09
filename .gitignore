@@ -20,6 +20,7 @@ Thumbs.db
 # Private Information
 .private
 .gitconfig
+!./.gitconfig
 
 # Vagrant cache files
 .vagrant
