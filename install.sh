@@ -38,3 +38,6 @@ ${dotfiledir}/vscode.sh
 
 # Run the oh my zsh setup Script
 ${dotfiledir}/ozsh.sh
+
+# Run python package installation Script
+${dotfiles}/python.sh
