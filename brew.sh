@@ -8,6 +8,7 @@ brew update && brew cleanup
 # Install Brew Packages
 PACKAGE_LIST=(
     python
+    pipenv
     tree
     zsh
     zsh-syntax-highlighting
