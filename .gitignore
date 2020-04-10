@@ -24,3 +24,6 @@ Thumbs.db
 
 # Vagrant cache files
 .vagrant
+
+# VSCode config
+.vscode
