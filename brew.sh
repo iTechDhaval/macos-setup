@@ -52,6 +52,7 @@ APP_LIST=(
     skyfonts
     paw
     zoomus
+    chromedriver
 )
 
 if [ ! -z $(echo $HOME | grep 'vagrant') ]; then
