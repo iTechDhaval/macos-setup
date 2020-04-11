@@ -17,6 +17,7 @@ PACKAGE_LIST=(
     cowsay
     htop-osx
     nvm
+    yarn
 )
 for pkg in "${PACKAGE_LIST[@]}"
 do
