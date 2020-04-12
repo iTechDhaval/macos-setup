@@ -3,6 +3,7 @@
 command -v brew >/dev/null || ( echo "Installing Brew..." && export CI=1 && /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)" )
 
 # Homebrew cleanup
+brew tap homebrew/cask-drivers
 brew update && brew cleanup
 
 # Install Brew Packages
@@ -55,6 +56,7 @@ APP_LIST=(
     paw
     zoomus
     chromedriver
+    logitech-unifying
 )
 
 if [ ! -z $(echo $HOME | grep 'vagrant') ]; then
