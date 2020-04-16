@@ -19,6 +19,7 @@ PACKAGE_LIST=(
     htop-osx
     nvm
     yarn
+    fastlane
 )
 for pkg in "${PACKAGE_LIST[@]}"
 do
