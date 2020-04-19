@@ -58,6 +58,7 @@ APP_LIST=(
     zoomus
     chromedriver
     logitech-unifying
+    slack
 )
 
 if [ ! -z $(echo $HOME | grep 'vagrant') ]; then
