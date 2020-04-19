@@ -59,6 +59,7 @@ APP_LIST=(
     chromedriver
     logitech-unifying
     slack
+    sonos
 )
 
 if [ ! -z $(echo $HOME | grep 'vagrant') ]; then
