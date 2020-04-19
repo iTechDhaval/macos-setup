@@ -16,12 +16,6 @@ ZSH_CUSTOM="$HOME/.oh-my-zsh/custom"
         https://github.com/romkatv/powerlevel10k.git \
         $ZSH_CUSTOM/themes/powerlevel10k
 
-[[ ! -d "$ZSH_CUSTOM/plugins/zsh-autosuggestions" ]] && \
-    git clone \
-        --depth=1 \
-        https://github.com/zsh-users/zsh-autosuggestions.git \
-        $ZSH_CUSTOM/plugins/zsh-autosuggestions
-
 [[ ! -d "$ZSH_CUSTOM/plugins/zsh-syntax-highlighting" ]] && \
     git clone \
         --depth=1 \

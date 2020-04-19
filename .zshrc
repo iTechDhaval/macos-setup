@@ -15,7 +15,6 @@ plugins=(
   dotenv
   osx
   python
-  zsh-autosuggestions
   zsh-syntax-highlighting
 )
 
