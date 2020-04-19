@@ -35,7 +35,6 @@ APP_LIST=(
     google-chrome
     firefox
     visual-studio-code
-    sourcetree
     discord
     google-backup-and-sync
     skype
