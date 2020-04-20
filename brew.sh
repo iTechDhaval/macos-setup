@@ -40,7 +40,6 @@ APP_LIST=(
     skype
     gimp
     vlc
-    divvy
     dropbox
     box-sync
     citrix-workspace
