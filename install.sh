@@ -19,7 +19,7 @@ dotfiledir="$( cd "$( dirname "$0" )" && pwd )"
 echo "Processing from the ${dotfiledir} directory"
 
 # list of files/folders to symlink in ${homedir}
-files="bash_profile bashrc aliases private gitconfig gitignore p10k.zsh zshrc"
+files="vimrc bash_profile bashrc aliases private gitconfig gitignore p10k.zsh zshrc"
 
 # create symlinks (will overwrite old dotfiles)
 for file in ${files}; do
