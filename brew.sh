@@ -58,6 +58,7 @@ APP_LIST=(
     logitech-unifying
     slack
     sonos
+    vnc-viewer
 )
 
 if [ ! -z $(echo $HOME | grep 'vagrant') ]; then
