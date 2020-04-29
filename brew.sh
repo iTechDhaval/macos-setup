@@ -59,6 +59,7 @@ APP_LIST=(
     slack
     sonos
     vnc-viewer
+    whatsapp
 )
 
 if [ ! -z $(echo $HOME | grep 'vagrant') ]; then
