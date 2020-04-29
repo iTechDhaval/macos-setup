@@ -1,6 +1,18 @@
 #!/usr/bin/env bash
-
 # Script to manage node version
+
+# Remove the symbol link which we linked node in Homebrew /usr/local/Cellar/node
+echo "Removing existing node installation from Homebrew..."
+brew unlink node
+rm -rf /usr/local/Cellar/node
+
+# Unpin node in Homebrew for upgrading yarn
+echo "Unpin node from Homebrew upgrade..."
+brew unpin node
+
+# Upgrade yarn
+echo "Upgrading yarn to latest version..."
+brew upgrade yarn
 
 # Uninstall default node installed with yarn
 [[ -z $(which node | grep '.nvm') ]] && \
@@ -12,19 +24,22 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] \
   && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
+echo "Installing latest lts version of node using nvm..."
 nvm install --lts --no-progress
 
 BREW_NODE_HOME='/usr/local/Cellar/node'
 [[ ! -d "${BREW_NODE_HOME}" ]] && \
     mkdir $BREW_NODE_HOME
 
+echo "Link current version node in Homebrew..."
 ln -s \
     $NVM_DIR/versions/node/$(nvm current)/ \
     $BREW_NODE_HOME
 
 # Overwrite node, npm and npx from linked node in
 # /usr/local/Cellar/node to /usr/local/bin/ homebrew
-brew link --overwrite node
+echo "Fix nodejs link in Homebrew..."
+brew unlink node && brew link --overwrite node
 
-# Prevent Homebrew upgrading node version
+echo "Prevent Homebrew upgrading node version..."
 brew pin node
