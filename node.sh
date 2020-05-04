@@ -43,3 +43,14 @@ brew unlink node && brew link --overwrite node
 
 echo "Prevent Homebrew upgrading node version..."
 brew pin node
+
+NODE_MODULE_LIST=(
+    @angular/cli
+    firebase-tools
+)
+for module in "${NODE_MODULE_LIST[@]}"
+do
+    [ -z $(npm list -g --depth=0 | grep "$module") ] \
+        && npm install -g $module \
+        || echo "Node module '${module}' already installed."
+done
