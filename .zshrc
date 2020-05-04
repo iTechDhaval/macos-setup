@@ -37,7 +37,7 @@ export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 POWERLEVEL9K_MODE="nerdfont-complete"
 DEFAULT_USER=$(whoami)
-# POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
+POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
 # POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs)
 # POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history time)
 
@@ -149,3 +149,5 @@ export NVM_DIR="$HOME/.nvm"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+export PATH="/usr/local/sbin:$PATH"
