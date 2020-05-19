@@ -60,6 +60,7 @@ APP_LIST=(
     sonos
     vnc-viewer
     whatsapp
+    minishift
 )
 
 if [ ! -z $(echo $HOME | grep 'vagrant') ]; then
