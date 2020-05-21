@@ -155,7 +155,7 @@ generate_password() {
     && PASS=$(echo "${PASS}" | sed 's|-||g')
 
   echo "${PASS}"
-  LENGTH=$(echo "${PASS}" | wc -c | sed -E "s|[[:space:]]+||g")
+  LENGTH=${#PASS}
   echo "Length: ${LENGTH}"
 }
 
