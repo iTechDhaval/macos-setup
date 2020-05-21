@@ -123,13 +123,40 @@ ENABLE_CORRECTION="true"
   source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 generate_password() {
-  segments=$1
-  if [ -z "$1" ]
-    then
-    segments=4
-  fi
-  let TOTAL_CHARACTERS=${segments}*3
-  LC_CTYPE=C tr -dc A-Za-z0-9 < /dev/urandom | head -c $TOTAL_CHARACTERS | xargs | sed 's/.\{3\}/&-/g' | rev | cut -c2- | rev
+  local CLEAN="no"
+  local SEGMENTS=3
+  local CHAR_IN_SEGMENTS=4
+  while [[ "$#" -gt 0 ]]
+  do
+    case $1 in
+      -c|--clean)
+        CLEAN="yes"
+        ;;
+      -s|--segments)
+        SEGMENTS="$2"
+        ;;
+    esac
+    shift
+  done
+
+  # echo "CLEAN: ${CLEAN}"
+  # echo "SEGMENTS: ${SEGMENTS}"
+
+  let "TOTAL_CHARACTERS = $SEGMENTS * $CHAR_IN_SEGMENTS"
+  local PASS=$(LC_CTYPE=C tr -dc A-Za-z0-9\$\!@ < /dev/urandom | \
+        head -c $TOTAL_CHARACTERS | \
+        xargs | \
+        sed "s/.\{$CHAR_IN_SEGMENTS\}/&-/g" | \
+        rev | \
+        cut -c2- | \
+        rev)
+
+  [[ "${CLEAN}" == "yes" ]] \
+    && PASS=$(echo "${PASS}" | sed 's|-||g')
+
+  echo "${PASS}"
+  LENGTH=$(echo "${PASS}" | wc -c | sed -E "s|[[:space:]]+||g")
+  echo "Length: ${LENGTH}"
 }
 
 autoload -Uz generate_password
