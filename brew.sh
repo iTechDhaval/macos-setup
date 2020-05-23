@@ -71,6 +71,7 @@ APP_LIST=(
     vnc-viewer
     whatsapp
     minishift
+    plex-media-player
 )
 
 if [ ! -z $(echo $HOME | grep 'vagrant') ]; then
