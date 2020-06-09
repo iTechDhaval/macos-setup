@@ -23,6 +23,9 @@ PACKAGE_LIST=(
     xhyve
     hyperkit
     docker-machine-driver-hyperkit
+    kompose
+    helm
+    helmfile
 )
 for pkg in "${PACKAGE_LIST[@]}"
 do
@@ -72,6 +75,7 @@ APP_LIST=(
     whatsapp
     minishift
     plex-media-player
+    upwork
 )
 
 if [ ! -z $(echo $HOME | grep 'vagrant') ]; then
