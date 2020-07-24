@@ -13,7 +13,7 @@ fi
 homedir=$1
 
 # dotfiles directory
-dotfiledir="$( cd "$( dirname "$0" )" && pwd )"
+dotfiledir=$( cd "$( dirname $0 )" && pwd )
 
 # change to the dotfiles directory
 echo "Processing from the ${dotfiledir} directory"
@@ -31,16 +31,16 @@ done
 curl -fsSL "https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash" -o ${homedir}/.git-completion.bash
 
 # Run the Homebrew Script
-${dotfiledir}/brew.sh
+. ${dotfiledir}/brew.sh
 
 # Run the VSCode Script
-${dotfiledir}/vscode.sh
+. ${dotfiledir}/vscode.sh
 
 # Run the oh my zsh setup Script
-${dotfiledir}/ozsh.sh
+. ${dotfiledir}/ozsh.sh
 
 # Run python package installation Script
-${dotfiles}/python.sh
+. ${dotfiledir}/python.sh
 
 # Run node setup script Script
-${dotfiles}/node.sh
+. ${dotfiledir}/node.sh
