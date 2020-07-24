@@ -20,9 +20,6 @@ PACKAGE_LIST=(
     nvm
     yarn
     fastlane
-    xhyve
-    hyperkit
-    docker-machine-driver-hyperkit
     kompose
     helm
     helmfile
@@ -33,13 +30,6 @@ do
         && brew install $pkg \
         || echo "${pkg} already installed"
 done
-
-# Print instruction to setup uid using root user
-echo "==> docker-machine-driver-hyperkit"
-echo "This driver requires superuser privileges to access the hypervisor. To
-enable, execute"
-echo "  sudo chown root:wheel /usr/local/opt/docker-machine-driver-hyperkit/bin/docker-machine-driver-hyperkit"
-echo "  sudo chmod u+s /usr/local/opt/docker-machine-driver-hyperkit/bin/docker-machine-driver-hyperkit"
 
 # Install MacOS Applications
 echo "Installing Applications..."
