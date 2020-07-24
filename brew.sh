@@ -45,7 +45,6 @@ APP_LIST=(
     vlc
     dropbox
     box-sync
-    citrix-workspace
     skitch
     the-unarchiver
     docker
