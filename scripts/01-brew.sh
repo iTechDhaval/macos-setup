@@ -65,6 +65,7 @@ APP_LIST=(
     minishift
     plex-media-player
     upwork
+    logitech-options
 )
 
 if [ ! -z $(echo $HOME | grep 'vagrant') ]; then
