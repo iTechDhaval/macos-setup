@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-ZSH_CUSTOM="$HOME/.oh-my-zsh/custom"
+ZSH_CUSTOM="$USER_HOME/.oh-my-zsh/custom"
 
-[ ! -d "$HOME/.oh-my-zsh" ] && \
+[ ! -d "$USER_HOME/.oh-my-zsh" ] && \
     ( echo "Installing oh-my-zsh..." \
         && sh -c \
             "$(curl \

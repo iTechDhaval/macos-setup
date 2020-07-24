@@ -18,7 +18,7 @@ brew upgrade yarn
 [[ -z $(which node | grep '.nvm') ]] && \
     brew uninstall node --ignore-dependencies
 
-export NVM_DIR="$HOME/.nvm"
+export NVM_DIR="$USER_HOME/.nvm"
 [ -s "/usr/local/opt/nvm/nvm.sh" ] \
   && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
 [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] \
@@ -50,7 +50,7 @@ NODE_MODULE_LIST=(
 )
 for module in "${NODE_MODULE_LIST[@]}"
 do
-    [ -z $(npm list -g --depth=0 | grep "$module") ] \
+    [[ -z $(npm list -g --depth=0 | grep "$module") ]] \
         && npm install -g $module \
         || echo "Node module '${module}' already installed."
 done

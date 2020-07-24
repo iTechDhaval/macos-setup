@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 ############################
-# This script creates symlinks from the home directory to any desired dotfiles in ${homedir}/dotfiles
+# This script creates symlinks from the home directory to any desired dotfiles in ${USER_HOME}/dotfiles
 # And also installs Homebrew Packages
 # And sets VSCode preferences
 ############################
@@ -10,37 +10,36 @@ if [ "$#" -ne 1 ]; then
     exit 1
 fi
 
-homedir=$1
+USER_HOME=$1
 
+# scripts base directory
+BASE_DIR=$( cd "$( dirname $0 )" && pwd )
 # dotfiles directory
-dotfiledir=$( cd "$( dirname $0 )" && pwd )
+DOTFILES_DIR="${BASE_DIR}/dotfiles"
+# scripts directory
+SCRIPTS_DIR="${BASE_DIR}/scripts"
 
 # change to the dotfiles directory
-echo "Processing from the ${dotfiledir} directory"
+echo "Processing from the ${DOTFILES_DIR} directory"
 
-# list of files/folders to symlink in ${homedir}
-files="vimrc bash_profile bashrc aliases private gitconfig gitignore p10k.zsh zshrc"
+# list of files/folders to symlink in ${USER_HOME}
+files=$(find $DOTFILES_DIR -type f -exec basename {} \; | sed 's|^\.||g')
 
 # create symlinks (will overwrite old dotfiles)
 for file in ${files}; do
     echo "Creating symlink to $file in home directory."
-    ln -sf ${dotfiledir}/.${file} ${homedir}/.${file}
+    ln -sf ${DOTFILES_DIR}/.${file} ${USER_HOME}/.${file}
 done
 
 # Download Git Auto-Completion
-curl -fsSL "https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash" -o ${homedir}/.git-completion.bash
+curl -fsSL "https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash" -o ${USER_HOME}/.git-completion.bash
 
-# Run the Homebrew Script
-. ${dotfiledir}/brew.sh
+# list of scripts to execute for system setup
+scripts=$(find $SCRIPTS_DIR -type f -exec basename {} \; | sort)
 
-# Run the VSCode Script
-. ${dotfiledir}/vscode.sh
-
-# Run the oh my zsh setup Script
-. ${dotfiledir}/ozsh.sh
-
-# Run python package installation Script
-. ${dotfiledir}/python.sh
-
-# Run node setup script Script
-. ${dotfiledir}/node.sh
+# run various scripts to install tools and applications
+for script in ${scripts}; do
+    script_name=$(echo ${script} | sed 's|\.sh||g')
+    echo "Running script '$script_name'..."
+    . ${SCRIPTS_DIR}/${script}
+done
