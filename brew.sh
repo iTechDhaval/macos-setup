@@ -16,7 +16,7 @@ PACKAGE_LIST=(
     youtube-dl
     bash-completion
     cowsay
-    htop-osx
+    htop
     nvm
     yarn
     fastlane
@@ -26,7 +26,7 @@ PACKAGE_LIST=(
 )
 for pkg in "${PACKAGE_LIST[@]}"
 do
-    [ -z $(brew list | grep $pkg) ] \
+    [ -z $(brew list | grep "$pkg\$") ] \
         && brew install $pkg \
         || echo "${pkg} already installed"
 done
