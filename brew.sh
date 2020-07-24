@@ -97,8 +97,7 @@ brew tap homebrew/cask-fonts
 
 FONT_LIST=(
     font-fira-code
-    font-firamono-nerd-font
-    font-meslo-lg
+    font-fira-mono-nerd-font
     font-fontawesome
 )
 for font in "${FONT_LIST[@]}"
