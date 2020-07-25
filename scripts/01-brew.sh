@@ -66,6 +66,7 @@ APP_LIST=(
     plex-media-player
     upwork
     logitech-options
+    printopia
 )
 
 if [ ! -z $(echo $HOME | grep 'vagrant') ]; then
