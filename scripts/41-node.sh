@@ -47,6 +47,8 @@ brew pin node
 NODE_MODULE_LIST=(
     @angular/cli
     firebase-tools
+    gitmoji-cli
+    gitmoji-changelog
 )
 for module in "${NODE_MODULE_LIST[@]}"
 do
