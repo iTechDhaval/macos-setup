@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
+
+[ -n "${USER_HOME}" ] || USER_HOME=$HOME
+[ -n "${BASE_DIR}" ] || BASE_DIR=$( cd "$(dirname $0)" && dirname $(pwd) )
+
 ZSH_CUSTOM="$USER_HOME/.oh-my-zsh/custom"
 
 [ ! -d "$USER_HOME/.oh-my-zsh" ] && \
