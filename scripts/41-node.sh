@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 # Script to manage node version
 
+[ -n "${USER_HOME}" ] || USER_HOME=$HOME
+
 # Remove the symbol link which we linked node in Homebrew /usr/local/Cellar/node
 echo "Removing existing node installation from Homebrew..."
 brew unlink node
