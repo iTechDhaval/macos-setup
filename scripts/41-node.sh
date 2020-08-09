@@ -26,8 +26,8 @@ export NVM_DIR="$USER_HOME/.nvm"
 [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] \
   && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
-echo "Installing latest lts version of node using nvm..."
-nvm install --lts --no-progress
+echo "Installing latest stable version of node using nvm..."
+nvm install stable --no-progress
 
 BREW_NODE_HOME='/usr/local/Cellar/node'
 [[ ! -d "${BREW_NODE_HOME}" ]] && \
