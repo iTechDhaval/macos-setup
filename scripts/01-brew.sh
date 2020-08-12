@@ -67,6 +67,8 @@ APP_LIST=(
     upwork
     logitech-options
     printopia
+    handbrake
+    dotnet-sdk
 )
 
 if [ ! -z $(echo $HOME | grep 'vagrant') ]; then
