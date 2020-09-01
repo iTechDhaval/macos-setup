@@ -5,6 +5,7 @@ PYTHON_PKGS=(
     PyScaffold
     sphinx
     sphinx-autobuild
+    iterm2
 )
 for pkg in "${PYTHON_PKGS[@]}"
 do
