@@ -78,7 +78,7 @@ fi
 
 for app in "${APP_LIST[@]}"
 do
-    [ -z $(brew cask list | grep $app) ] \
+    [ -z $(brew list --cask | grep $app) ] \
         && brew cask install $app \
         || echo "Application '${app}' already installed."
 done
