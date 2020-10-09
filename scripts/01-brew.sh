@@ -23,6 +23,7 @@ PACKAGE_LIST=(
     kompose
     helm
     helmfile
+    handbrake
 )
 for pkg in "${PACKAGE_LIST[@]}"
 do
@@ -69,6 +70,7 @@ APP_LIST=(
     printopia
     handbrake
     dotnet-sdk
+    google-cloud-sdk
 )
 
 if [ ! -z $(echo $HOME | grep 'vagrant') ]; then
