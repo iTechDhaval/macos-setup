@@ -81,7 +81,7 @@ fi
 for app in "${APP_LIST[@]}"
 do
     [ -z $(brew list --cask | grep $app) ] \
-        && brew cask install $app \
+        && brew install --cask $app \
         || echo "Application '${app}' already installed."
 done
 
@@ -97,7 +97,7 @@ FONT_LIST=(
 )
 for font in "${FONT_LIST[@]}"
 do
-    [ -z $(brew cask list | grep $font) ] \
-        && brew cask install $font \
+    [ -z $(brew list --cask | grep $font) ] \
+        && brew install --cask $font \
         || echo "Font '${font}' already installed."
 done
