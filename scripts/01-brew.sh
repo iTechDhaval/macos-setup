@@ -20,10 +20,8 @@ PACKAGE_LIST=(
     nvm
     yarn
     fastlane
-    kompose
     helm
     helmfile
-    handbrake
 )
 for pkg in "${PACKAGE_LIST[@]}"
 do
@@ -34,25 +32,28 @@ done
 
 # Install MacOS Applications
 echo "Installing Applications..."
-APP_LIST=(
+APP_LIST_BASE=(
     iterm2
+    vagrant
     google-chrome
-    firefox
     visual-studio-code
     discord
-    google-backup-and-sync
-    skype
-    gimp
     vlc
     dropbox
     box-sync
     skitch
     the-unarchiver
     docker
-    intel-power-gadget
-    webtorrent
     pycharm-ce
     microsoft-office
+    minishift
+    logitech-options
+)
+
+APP_LIST_EXTRA=(
+    google-backup-and-sync
+    intel-power-gadget
+    webtorrent
     sketchpacks
     skyfonts
     paw
@@ -63,22 +64,21 @@ APP_LIST=(
     sonos
     vnc-viewer
     whatsapp
-    minishift
-    plex-media-player
-    upwork
-    logitech-options
     printopia
     handbrake
     dotnet-sdk
     google-cloud-sdk
 )
 
-if [ ! -z $(echo $HOME | grep 'vagrant') ]; then
-    APP_LIST+=( virtualbox )
-    APP_LIST+=( virtualbox-extension-pack )
+
+[ ! -f "$HOME/.config/office-system" ] && APP_LIST_BASE+=( APP_LIST_EXTRA )
+
+if [ ! -z $(command -v vagrant) ]; then
+    APP_LIST_BASE+=( virtualbox )
+    APP_LIST_BASE+=( virtualbox-extension-pack )
 fi
 
-for app in "${APP_LIST[@]}"
+for app in "${APP_LIST_BASE[@]}"
 do
     [ -z $(brew list --cask | grep $app) ] \
         && brew install --cask $app \
