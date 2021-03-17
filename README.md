@@ -19,6 +19,11 @@ cd macos-setup && chmod +x ./install.sh scripts/*
 ./install.sh $HOME
 ```
 
+## Optional
+If you want to skip some personal apps installation then run below command to activate it.
+```
+echo "Office Laptop so skip some personal app installation" >> $HOME/.config/office-system
+```
 ## Features
 * Install dotfiles
   * .aliases
