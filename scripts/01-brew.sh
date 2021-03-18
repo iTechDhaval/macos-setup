@@ -13,16 +13,23 @@ PACKAGE_LIST=(
     tree
     zsh
     zsh-syntax-highlighting
-    youtube-dl
     bash-completion
     cowsay
     htop
     nvm
     yarn
-    fastlane
     helm
     helmfile
 )
+
+PACKAGE_LIST_EXTRA=(
+    youtube-dl
+    fastlane
+)
+
+[ ! -f "$HOME/.config/office-system" ] \
+    && PACKAGE_LIST_EXTRA+=( PACKAGE_LIST_EXTRA )
+
 for pkg in "${PACKAGE_LIST[@]}"
 do
     [ -z $(brew list | grep "$pkg\$") ] \
@@ -37,20 +44,20 @@ APP_LIST_BASE=(
     vagrant
     google-chrome
     visual-studio-code
-    discord
     vlc
-    dropbox
-    box-sync
-    skitch
     the-unarchiver
     docker
-    pycharm-ce
-    microsoft-office
     minishift
-    logitech-options
 )
 
 APP_LIST_EXTRA=(
+    discord
+    dropbox
+    box-sync
+    skitch
+    pycharm-ce
+    microsoft-office
+    logitech-options
     google-backup-and-sync
     intel-power-gadget
     webtorrent
@@ -71,7 +78,8 @@ APP_LIST_EXTRA=(
 )
 
 
-[ ! -f "$HOME/.config/office-system" ] && APP_LIST_BASE+=( APP_LIST_EXTRA )
+[ ! -f "$HOME/.config/office-system" ] \
+    && APP_LIST_BASE+=( APP_LIST_EXTRA )
 
 if [ ! -z $(command -v vagrant) ]; then
     APP_LIST_BASE+=( virtualbox )
