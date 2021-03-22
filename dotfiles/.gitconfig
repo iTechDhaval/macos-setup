@@ -27,7 +27,7 @@
 [web]
   browser = google-chrome
 [credential]
-  helper = osxkeychain
+	helper = osxkeychain
 [push]
   default = simple
 [merge]
@@ -68,3 +68,5 @@
   co = checkout
   ci = commit
   br = branch
+[http]
+	sslCAInfo = /Users/dhaval/git-certs/AllinOne.pem
