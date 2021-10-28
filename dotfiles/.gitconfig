@@ -69,4 +69,4 @@
   ci = commit
   br = branch
 [http]
-	sslCAInfo = /Users/dhaval/git-certs/AllinOne.pem
+	# sslCAInfo = /Users/dhaval/git-certs/AllinOne.pem
