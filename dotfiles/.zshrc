@@ -143,10 +143,10 @@ generate_password() {
   # echo "SEGMENTS: ${SEGMENTS}"
 
   let "TOTAL_CHARACTERS = $SEGMENTS * $CHAR_IN_SEGMENTS"
-  local PASS=$(LC_CTYPE=C tr -dc A-Za-z0-9\$\!@ < /dev/urandom | \
-        head -c $TOTAL_CHARACTERS | \
+  local PASS=$(openssl rand -base64 ${TOTAL_CHARACTERS} |md5 | \
+        head -c ${TOTAL_CHARACTERS} | \
         xargs | \
-        sed "s/.\{$CHAR_IN_SEGMENTS\}/&-/g" | \
+        sed "s/.\{${CHAR_IN_SEGMENTS}\}/&-/g" | \
         rev | \
         cut -c2- | \
         rev)
