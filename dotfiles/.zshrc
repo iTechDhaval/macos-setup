@@ -122,21 +122,35 @@ ENABLE_CORRECTION="true"
 [[ ! -f /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]] || \
   source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+display_generate_password_usage() {
+  # Display Help
+  echo "Password generator help."
+  echo
+  echo "Syntax: generate_password [-s|c|h]"
+  echo "options:"
+  echo "s     Segments in the password separated with '-'."
+  echo "c     Characters in single segment."
+  echo "h     Print this Help."
+  echo
+
+}
+
 generate_password() {
   local CLEAN="no"
   local SEGMENTS=3
-  local CHAR_IN_SEGMENTS=4
-  while [[ "$#" -gt 0 ]]
-  do
-    case $1 in
-      -c|--clean)
-        CLEAN="yes"
-        ;;
-      -s|--segments)
-        SEGMENTS="$2"
-        ;;
-    esac
-    shift
+  local CHAR_IN_SEGMENTS=5
+  while getopts ":h" option; do
+   case $option in
+    c)
+      CLEAN="yes"
+      ;;
+    s)
+      SEGMENTS=${OPTARG}
+      ;;
+    *) # display Help
+      display_generate_password_usage
+      return;;
+   esac
   done
 
   # echo "CLEAN: ${CLEAN}"
