@@ -1,0 +1,3 @@
+
+* 4 * * * /Users/dhaval/macos-setup/misc/restart_docker.sh 2>&1 >> /Users/dhaval/logs/docker-restart.log
+0 7 * * * /Users/dhaval/macos-setup/misc/refresh_wallpaper.sh 2>&1 >> /Users/dhaval/logs/refresh-wallpaper.log
