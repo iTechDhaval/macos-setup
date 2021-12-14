@@ -13,7 +13,7 @@ fi
 plugins=(
   git
   dotenv
-  osx
+  macos
   python
   zsh-syntax-highlighting
 )
