@@ -21,9 +21,9 @@ plugins=(
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 # PATH=$PATH:$HOME/tools/flutter/bin
-export PATH="/usr/local/opt/python@3.8/bin:$PATH"
-export LDFLAGS="-L/usr/local/opt/python@3.8/lib"
-export PKG_CONFIG_PATH="/usr/local/opt/python@3.8/lib/pkgconfig"
+export PATH="/usr/local/opt/python@3.10/bin:$PATH"
+export LDFLAGS="-L/usr/local/opt/python@3.10/lib"
+export PKG_CONFIG_PATH="/usr/local/opt/python@3.10/lib/pkgconfig"
 # export PATH
 
 # Path to your oh-my-zsh installation.
