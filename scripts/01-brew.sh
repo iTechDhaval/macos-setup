@@ -11,4 +11,4 @@ echo "Update and cleanup brew..."
 brew update && brew cleanup
 
 echo "Install application via Brewfile..."
-brew bundle install --file=~/Brewfile
+brew bundle install --global
