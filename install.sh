@@ -23,12 +23,12 @@ SCRIPTS_DIR="${BASE_DIR}/scripts"
 echo "Processing from the ${DOTFILES_DIR} directory"
 
 # list of files/folders to symlink in ${USER_HOME}
-files=$(find $DOTFILES_DIR -type f -exec basename {} \; | sed 's|^\.||g')
+files=$(find $DOTFILES_DIR -type f -exec basename {} \;)
 
 # create symlinks (will overwrite old dotfiles)
 for file in ${files}; do
     echo "Creating symlink to $file in home directory."
-    ln -sf ${DOTFILES_DIR}/.${file} ${USER_HOME}/.${file}
+    ln -sf ${DOTFILES_DIR}/${file} ${USER_HOME}/${file}
 done
 
 # Download Git Auto-Completion
