@@ -21,9 +21,6 @@ plugins=(
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 # PATH=$PATH:$HOME/tools/flutter/bin
-export PATH="/usr/local/opt/python@3.10/bin:$PATH"
-export LDFLAGS="-L/usr/local/opt/python@3.10/lib"
-export PKG_CONFIG_PATH="/usr/local/opt/python@3.10/lib/pkgconfig"
 # export PATH
 
 # Path to your oh-my-zsh installation.
@@ -192,3 +189,6 @@ export NVM_DIR="$HOME/.nvm"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 export PATH="/usr/local/sbin:$PATH"
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
