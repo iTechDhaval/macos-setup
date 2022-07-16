@@ -21,13 +21,13 @@ brew upgrade yarn
     brew uninstall node --ignore-dependencies
 
 export NVM_DIR="$USER_HOME/.nvm"
-[ -s "/usr/local/opt/nvm/nvm.sh" ] \
-  && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] \
-  && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+[ -s "$(brew --prefix)/opt/nvm/nvm.sh" ] \
+  && \. "$(brew --prefix)/opt/nvm/nvm.sh" # This loads nvm
+[ -s "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm" ] \
+  && \. "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion
 
-echo "Installing latest stable version of node using nvm..."
-nvm install stable --no-progress
+echo "Installing lts version of node using nvm..."
+nvm install lts --no-progress
 
 BREW_NODE_HOME='/usr/local/Cellar/node'
 [[ ! -d "${BREW_NODE_HOME}" ]] && \
