@@ -1,4 +1,5 @@
 tap "aws/tap"
+tap "buo/cask-upgrade"
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/cask-drivers"
