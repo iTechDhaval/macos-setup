@@ -16,6 +16,7 @@ plugins=(
   macos
   python
   zsh-syntax-highlighting
+  ssh-agent
 )
 
 # If you come from bash you might have to change your $PATH.
