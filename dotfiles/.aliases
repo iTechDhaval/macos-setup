@@ -38,6 +38,8 @@ alias sudo='sudo '
 # Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
 alias update_system='sudo softwareupdate -i -a'
 alias update_apps='brew upgrade && brew cu -af && mas upgrade'
+alias snapshot_brew='brew bundle dump --global --force'
+alias sync_brew='brew bundle install --global'
 
 # Show/hide hidden files in Finder
 alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
@@ -56,3 +58,8 @@ alias reg_mode='defaults write com.apple.dock autohide -bool false && killall Do
 alias clean='rm -rf ~/.Trash/*; rm -rf ~/Downloads/*'
 alias wipe_env='rm -rf ~/tutorial_env; python3 -m venv ~/tutorial_env'
 alias tut_env='source ~/tutorial_env/bin/activate'
+
+alias git='noglob git'
+
+alias gb='ssh bastion'
+alias ga='ssh admin'
