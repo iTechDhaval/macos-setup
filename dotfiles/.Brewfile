@@ -21,6 +21,7 @@ brew "tree"
 brew "yarn"
 brew "zsh"
 brew "zsh-syntax-highlighting"
+cask "alfred"
 cask "font-fira-code"
 cask "font-fira-code-nerd-font"
 cask "font-fira-mono-nerd-font"
@@ -33,6 +34,7 @@ cask "the-unarchiver"
 cask "vagrant"
 cask "visual-studio-code"
 cask "vlc"
+mas "AdGuard for Safari", id: 1440147259
 mas "Affinity Designer", id: 824171161
 mas "Affinity Photo", id: 824183456
 mas "Affinity Publisher", id: 881418622
