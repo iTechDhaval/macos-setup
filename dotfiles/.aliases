@@ -63,3 +63,5 @@ alias git='noglob git'
 
 alias gb='ssh bastion'
 alias ga='ssh admin'
+
+alias sudo='nocorrect sudo'
