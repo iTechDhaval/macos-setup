@@ -137,8 +137,8 @@ generate_password() {
   local CLEAN="no"
   local SEGMENTS=3
   local CHAR_IN_SEGMENTS=5
-  while getopts ":h" option; do
-   case $option in
+  while getopts "cs:h" option; do
+   case "$option" in
     c)
       CLEAN="yes"
       ;;
@@ -193,3 +193,5 @@ export PATH="/usr/local/sbin:$PATH"
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
+
+neofetch
