@@ -195,3 +195,6 @@ command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
 neofetch
+
+# Create pipenv inside project folder.
+export PIPENV_VENV_IN_PROJECT=1
