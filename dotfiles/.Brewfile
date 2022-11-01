@@ -26,18 +26,24 @@ cask "font-fira-code"
 cask "font-fira-code-nerd-font"
 cask "font-fira-mono-nerd-font"
 cask "font-fontawesome"
+cask "font-jetbrains-mono"
+cask "font-jetbrains-mono-nerd-font"
+cask "fontbase"
 cask "google-chrome"
 cask "iterm2"
 cask "minishift"
+cask "obs"
 cask "slack"
 cask "the-unarchiver"
 cask "vagrant"
 cask "visual-studio-code"
 cask "vlc"
+cask "zoom"
 mas "AdGuard for Safari", id: 1440147259
 mas "Affinity Designer", id: 824171161
 mas "Affinity Photo", id: 824183456
 mas "Affinity Publisher", id: 881418622
+mas "Grammarly for Safari", id: 1462114288
 mas "Keynote", id: 409183694
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
