@@ -8,3 +8,11 @@ while [ $EXIT_CODE -ne 0 ]; do
     EXIT_CODE=$?
     COUNTER=$(( COUNTER + 1 ))
 done
+
+# Cleanup some old wallpapers occupying the space
+EXIT_CODE_CLEANUP=1
+while [ $EXIT_CODE_CLEANUP -ne 0 ]; do
+    echo "Info: Cleaning wallpaper folder..."
+    shortcuts run "Cleanup Wallpapers"
+    EXIT_CODE_CLEANUP=$?
+done
