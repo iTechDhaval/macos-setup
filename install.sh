@@ -14,11 +14,8 @@ title() {
 }
 
 if [ "$#" -ne 1 ]; then
-    echo "Usage: install.sh <home_directory>"
-    exit 1
+    USER_HOME=$HOME
 fi
-
-USER_HOME=$1
 
 # scripts base directory
 BASE_DIR=$( cd "$( dirname $0 )" && pwd )
@@ -40,7 +37,11 @@ for file in ${files}; do
 done
 
 # Download Git Auto-Completion
-curl -fsSL "https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash" -o ${USER_HOME}/.git-completion.bash
+GIT_COMPLITION="${USER_HOME}/.git-completion.bash"
+
+curl -fsSL \
+    "https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash" \
+    -o ${USER_HOME}/.git-completion.bash
 
 # list of scripts to execute for system setup
 scripts=$(find $SCRIPTS_DIR -type f -exec basename {} \; | sort)
