@@ -17,6 +17,7 @@ plugins=(
   python
   zsh-syntax-highlighting
   ssh-agent
+  web-search
 )
 
 # If you come from bash you might have to change your $PATH.
@@ -120,61 +121,8 @@ ENABLE_CORRECTION="true"
 [[ ! -f /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]] || \
   source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-display_generate_password_usage() {
-  # Display Help
-  echo "Password generator help."
-  echo
-  echo "Syntax: generate_password [-s|c|h]"
-  echo "options:"
-  echo "s     Segments in the password separated with '-'."
-  echo "c     Characters in single segment."
-  echo "h     Print this Help."
-  echo
-
-}
-
-generate_password() {
-  local CLEAN="no"
-  local SEGMENTS=3
-  local CHAR_IN_SEGMENTS=5
-  while getopts "cs:h" option; do
-   case "$option" in
-    c)
-      CLEAN="yes"
-      ;;
-    s)
-      SEGMENTS=${OPTARG}
-      ;;
-    *) # display Help
-      display_generate_password_usage
-      return;;
-   esac
-  done
-
-  # echo "CLEAN: ${CLEAN}"
-  # echo "SEGMENTS: ${SEGMENTS}"
-
-  let "TOTAL_CHARACTERS = $SEGMENTS * $CHAR_IN_SEGMENTS"
-  local PASS=$(openssl rand -base64 ${TOTAL_CHARACTERS} |md5 | \
-        head -c ${TOTAL_CHARACTERS} | \
-        xargs | \
-        sed "s/.\{${CHAR_IN_SEGMENTS}\}/&-/g" | \
-        rev | \
-        cut -c2- | \
-        rev)
-
-  [[ "${CLEAN}" == "yes" ]] \
-    && PASS=$(echo "${PASS}" | sed 's|-||g')
-
-  echo "${PASS}"
-  LENGTH=${#PASS}
-  echo "Length: ${LENGTH}"
-}
-
-autoload -Uz generate_password
-
 # Load dotfiles:
-for file in ~/.{aliases,private}; do
+for file in ~/.{aliases,functions}; do
     [ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;
