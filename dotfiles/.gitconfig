@@ -2,9 +2,9 @@
   name = Dhaval Patel
   email = dhaval@envosue.com
 [core]
-  editor = vi
   excludesfile = ~/.gitignore
   autocrlf = input
+  pager = less -FRX
 [color]
   branch = auto
   diff = auto
@@ -32,8 +32,6 @@
   default = simple
 [merge]
   tool = bcomp
-[difftool]
-  prompt = false
 [alias]
   c = commit
   ca = commit -a
@@ -68,5 +66,3 @@
   co = checkout
   ci = commit
   br = branch
-[http]
-	# sslCAInfo = /Users/dhaval/git-certs/AllinOne.pem
