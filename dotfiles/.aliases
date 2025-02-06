@@ -61,7 +61,4 @@ alias tut_env='source ~/tutorial_env/bin/activate'
 
 alias git='noglob git'
 
-alias gb='ssh bastion'
-alias ga='ssh admin'
-
 alias sudo='nocorrect sudo'
